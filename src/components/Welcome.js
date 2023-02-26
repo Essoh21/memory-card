@@ -1,23 +1,23 @@
 import React, { useState, useEffect } from 'react';
 
-const Welcome = ({ text }) => {
+const Welcome = (props) => {
     const [displayedText, setDisplayedText] = useState('');
 
     useEffect(() => {
         let i = 0;
         const interval = setInterval(() => {
-            if (i < text.length) {
-                setDisplayedText(prev => prev + text[i]);
-                i++;
+            if (i < props.text.length) {
+                setDisplayedText(prev => prev + props.text.charAt(i));
+                i += 1;
             } else {
                 clearInterval(interval);
             }
-        }, 100);
+        }, 20);
 
         return () => clearInterval(interval);
-    }, [text]);
+    }, [props.text]);
 
-    return <p className='Welcome'>{displayedText}</p>;
-}
+    return <p className='Welcome'>{props.gameStarted ? props.instructions : displayedText}</p>;
+};
 
 export default Welcome;
