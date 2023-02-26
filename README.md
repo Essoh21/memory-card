@@ -1,3 +1,3 @@
 # memory-card
 Memory card game
-live preview https://github.com/Essoh21/memory-card
+live preview https://essoh21.github.io/memory-card/
